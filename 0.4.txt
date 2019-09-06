@@ -1,0 +1,30 @@
+title New Note POST
+
+Browser->Server: HTTP: POST https://fullstack-exampleapp.herokuapp.com/new_note
+Server-->Browser: Status Code 302, URL Redirect to Notes
+
+note over Browser:
+Data is sent as the body of the POST-request.
+The Server creates a new note object from data fetched from the post request
+and adds it to an array called notes.
+end note:
+
+Browser->Server: HTTP: GET https://fullstack-exampleapp.herokuapp.com/notes
+Server-->Browser: HTML Code
+Browser->Server: HTTP: GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP: GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server-->Browser: main.js
+
+note over Browser:
+Fetches data.json file, new note that has been added now displays
+the content and date added.
+end note
+
+Browser-> Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server--> Browser: [{ content: "New note", date:"Today" }, ...]
+
+note over Browser:
+browser executes the event handler
+that renders notes to display
+end note
