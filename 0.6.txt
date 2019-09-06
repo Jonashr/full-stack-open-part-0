@@ -1,0 +1,18 @@
+title New Note_SPA POST
+
+Browser->Server: HTTP: POST (JSON format) https://fullstack-exampleapp.herokuapp.com/new_note_spa
+Server-->Browser: Status Code 201, Created.
+
+note over Server:
+Server does not call for a redirect this time. 
+This means that the browser now stays on the same side without sending further 
+http requests to html, css and js files.
+end note:
+
+note over Browser:
+Browser executes the event handler
+Event handler immediately calls e.preventDefault() to prevent the default handling of form submit,
+thus avoiding a redirect.
+Pushes the new note to the list and browser now renders the notes to display.
+ 
+end note
